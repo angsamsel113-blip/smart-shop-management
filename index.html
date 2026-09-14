@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopDash — Smart Shop Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <span class="sidebar__logo" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="#0f766e" />
+              <path
+                d="M8 12.5h16l-1.2 9.2a2 2 0 0 1-2 1.8H11.2a2 2 0 0 1-2-1.8L8 12.5Z"
+                stroke="#042f2e"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M11 12.5V10a5 5 0 0 1 10 0v2.5"
+                stroke="#042f2e"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <div>
+            <p class="sidebar__name">ShopDash</p>
+            <p class="sidebar__tagline">Smart Shop Manager</p>
+          </div>
+        </div>
+
+        <nav class="sidebar__nav" aria-label="Main">
+          <p class="sidebar__label">Overview</p>
+          <a class="nav-link nav-link--active" href="#" id="dashboard-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="9" rx="1.5" />
+              <rect x="14" y="3" width="7" height="5" rx="1.5" />
+              <rect x="14" y="12" width="7" height="9" rx="1.5" />
+              <rect x="3" y="16" width="7" height="5" rx="1.5" />
+            </svg>
+            Dashboard
+          </a>
+          <a class="nav-link" href="#" id="products-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round" />
+            </svg>
+            Products
+          </a>
+          <a class="nav-link" href="#" id="sales-link" >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="9" cy="19" r="1.5" fill="currentColor" stroke="none" />
+              <circle cx="18" cy="19" r="1.5" fill="currentColor" stroke="none" />
+              <path d="M3 4h2l2.2 11.2A2 2 0 0 0 9.2 17H18a2 2 0 0 0 2-1.6L21.5 8H6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            
+            Sales
+          </a>
+          <a class="nav-link" href="#" id="inventory-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" />
+              <path d="M8 7V5a4 4 0 0 1 8 0v2" stroke-linecap="round" />
+            </svg>
+            Inventory
+          </a>
+
+          <p class="sidebar__label">Reports</p>
+          <a class="nav-link" href="#" id="sales-report-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 19V5M4 19h16" stroke-linecap="round" />
+              <path d="M8 15v-4M12 15V8M16 15v-6" stroke-linecap="round" />
+            </svg>
+            Sales Report
+          </a>
+          <a class="nav-link" href="#" id="stock-report-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 19V5M4 19h16" stroke-linecap="round" />
+              <path d="M7 16l4-5 3 3 5-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Stock Report
+          </a>
+
+          <p class="sidebar__label">Manage</p>
+          <a class="nav-link" href="#" id="categories-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+            </svg>
+            Categories
+          </a>
+         
+        </nav>
+
+        <div class="sidebar__footer">
+          <div class="theme-toggle">
+            <span class="theme-toggle__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5Z" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="theme-toggle__text">Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" id="dark-mode-toggle"  />
+              <span class="switch__track"></span>
+            </label>
+          </div>
+
+          <div class="profile">
+            <span class="profile__avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="3.2" />
+                <path d="M5.5 19c1.2-3.2 3.6-4.8 6.5-4.8s5.3 1.6 6.5 4.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <p class="profile__role">Shop Owner</p>
+          </div>
+        </div>
+      </aside>
+
+      <label for="nav-toggle" class="sidebar-overlay"></label>
+
+      <div class="shell">
+        <header class="topbar">
+          <label for="nav-toggle" class="menu-btn" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <div class="topbar__actions">
+            <time class="date-chip" datetime=""></time>
+            
+          </div>
+        </header>
+         
+        <main class="content">
+          <div id="dashboard-view">
+          <section   class="overview" aria-label="Key metrics">
+            <header class="overview__header">
+              <h1>Overview</h1>
+            </header>
+
+            <div class="stats">
+              <article class="stat-card stat-card--products">
+                <div class="stat-card__top">
+                  <p class="stat-card__label">Total Products</p>
+                  <div class="stat-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M4 8h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" />
+                      <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="stat-card__value" id="total-products">0</p>
+              </article>
+
+              <article class="stat-card stat-card--sales">
+                <div class="stat-card__top">
+                  <p class="stat-card__label">Total Sales</p>
+                  <div class="stat-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M3 12h4l3 8 4-16 3 8h4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="stat-card__value" id="total-sales">0</p>
+              </article>
+
+              <article class="stat-card stat-card--revenue">
+                <div class="stat-card__top">
+                  <p class="stat-card__label">Total Revenue</p>
+                  <div class="stat-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <circle cx="12" cy="12" r="8" />
+                      <path d="M12 8v8M9.5 10.5c.6-1 1.5-1.5 2.5-1.5s2 .6 2 1.8-1 1.7-2.5 2-2.5.9-2.5 2 1.1 1.8 2.5 1.8 1.9-.5 2.5-1.5" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="stat-card__value" id="total-revenue">0</p>
+              </article>
+
+              <article class="stat-card stat-card--alert">
+                <div class="stat-card__top">
+                  <p class="stat-card__label">Low Stock Items</p>
+                  <div class="stat-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M12 9v4M12 17h.01" stroke-linecap="round" />
+                      <path d="M10.3 4.8 2.8 18a2 2 0 0 0 1.7 3h15a2 2 0 0 0 1.7-3L13.7 4.8a2 2 0 0 0-3.4 0Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="stat-card__value" id="low-stock-count">12</p>
+               
+              </article>
+            
+          </section>
+
+           <div class="chart" role="img" aria-label="Monthly sales chart from January to August 2026">
+                <div class="chart__bars">
+               </div>
+              </div>
+            </section>
+          </div>
+
+          
+         <div id="add-product-form" style="display: none; margin-bottom: 1.5rem;">
+  <div class="panel" style="padding: 1.5rem;">
+    
+    <h3 style="margin-top: 0;">Add Product</h3>
+
+    <div style="display: grid; gap: 1rem;">
+
+      <div>
+        <label for="product-category">Category</label>
+        <select id="product-category">
+          <option value="">Select Category</option>
+          <option value="Beverages">Beverages</option>
+          <option value="Snacks & Biscuits">Snacks & Biscuits</option>
+          <option value="Dairy & Eggs">Dairy & Eggs</option>
+          <option value="Oils">Oils</option>
+           <option value="Spices & Masala">Spices & Masala</option>
+          <option value="Cleaning Products">Cleaning Products</option>
+           <option value="Personal Care">Personal Care </option>
+          <option value="Tea & Coffee">Tea & Coffee</option>
+           <option value="Packaged Foods">Packaged Foods</option>
+       
+        </select>
+      </div>
+
+      <div>
+        <label for="new-product-name">Product Name</label>
+        <input
+          type="text"
+          id="new-product-name"
+          placeholder="Enter product name"
+        />
+        <div id="new-product-suggestions"></div>
+      </div>
+
+      <div>
+        <label for="product-price">Price</label>
+        <input
+          type="number"
+          id="product-price"
+          placeholder="Enter price"
+          min="0"
+        />
+      </div>
+
+      
+
+      <div>
+        <button type="button" class="btn btn--primary" id="save-product-btn">
+          Save Product
+        </button>
+
+        <button type="button" class="btn" id="cancel-product-btn">
+          Cancel
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+         <!-- Line 448-le </section> കഴിഞ്ഞുള്ള ഭാഗം. IVIDE PASTE CHEYYUKA -->
+
+          <!-- 1. Puthiya Product Section Box -->
+          <div id="products-section" style="display: none; width: 100%;">
+            <header class="section-header">
+              <h2>Products</h2>
+              <p>Manage products in your shop</p>
+            </header>
+
+            <div class="section-toolbar">
+              <div class="products-search">
+                <input type="search" id="product-search" placeholder="Search products" />
+                <div id="product-suggestions" class="product-suggestions"></div>
+              </div>
+              <button type="button" class="btn btn--primary" id="add-product-btn">+ Add Product</button>
+            </div>
+
+            <div class="table-wrap section-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                  </tr>
+                </thead>
+                <tbody id="products-table-body">
+                  
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="categories-section" style="display: none; width: 100%;">
+            <header class="section-header">
+              <h2>Categories</h2>
+              <p>Manage product categories</p>
+            </header>
+
+            <div class="section-toolbar section-toolbar--end">
+              <button type="button" class="btn btn--primary" id="add-category-btn">+ Add Category</button>
+            </div>
+
+            <div id="add-category-form" style="display: none; margin-bottom: 1.5rem;">
+              <div class="panel" style="padding: 1.5rem;">
+                <h3 style="margin-top: 0;">Add Category</h3>
+
+                <div style="display: grid; gap: 1rem;">
+                  <div>
+                    <label for="category-name">Category Name</label>
+                    <input
+                      type="text"
+                      id="category-name"
+                      placeholder="Enter category name"
+                    />
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn btn--primary" id="save-category-btn">
+                      Save Category
+                    </button>
+
+                    <button type="button" class="btn" id="cancel-category-btn">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-wrap section-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Products</th>
+                  </tr>
+                </thead>
+                <tbody id="categories-table-body">
+                  <tr>
+                    <td>Beverages</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>Snacks &amp; Biscuits</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>Rice &amp; Grains</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Dairy &amp; Eggs</td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td>Oils</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>Spices &amp; Masala</td>
+                    <td>22</td>
+                  </tr>
+                  <tr>
+                    <td>Cleaning Products</td>
+                    <td>11</td>
+                  </tr>
+                  <tr>
+                    <td>Personal Care</td>
+                    <td>14</td>
+                  </tr>
+                  <tr>
+                    <td>Tea &amp; Coffee</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Packaged Foods</td>
+                    <td>16</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="inventory-section" style="display: none; width: 100%;">
+            <header class="section-header">
+              <h2>Inventory</h2>
+              <p>Manage your shop inventory and stock</p>
+            </header>
+
+            <div class="section-toolbar section-toolbar--end">
+              <button type="button" class="btn btn--primary" id="add-stock-btn">+ Add Stock</button>
+            </div>
+            <div id="add-stock-form" class="add-stock-form" style="display: none;">
+  <div class="form-group">
+    <label for="stock-product">Product</label>
+    <select id="stock-product">
+      <option value="">Select product</option>
+    
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="stock-quantity">Quantity</label>
+    <input
+      type="number"
+      id="stock-quantity"
+      min="1"
+      placeholder="Enter quantity"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="stock-expiry">Expiry Date</label>
+    <input type="date" id="stock-expiry" />
+  </div>
+
+  <button type="button" class="btn btn--primary" id="save-stock-btn">
+    Save Stock
+  </button>
+</div>
+            <div class="table-wrap section-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Current Stock</th>
+                    <th>Stock Status</th>
+                    <th>Expiry Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="inventory-table-body">
+                  <tr>
+                    <td>Pepsi</td>
+                    <td>Beverages</td>
+                    <td>24 units</td>
+                    <td><span class="badge badge--in-stock">In Stock</span></td>
+                    <td>12 Nov 2026</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>Coca Cola</td>
+                    <td>Beverages</td>
+                    <td>18 units</td>
+                    <td><span class="badge badge--in-stock">In Stock</span></td>
+                    <td>18 Nov 2026</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>Parle-G Biscuits</td>
+                    <td>Snacks &amp; Biscuits</td>
+                    <td>8 units</td>
+                    <td><span class="badge badge--low-stock">Low Stock</span></td>
+                    <td>05 Oct 2026</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>Amul Taaza Milk 1L</td>
+                    <td>Dairy &amp; Eggs</td>
+                    <td>0 units</td>
+                    <td><span class="badge badge--out-of-stock">Out of Stock</span></td>
+                    <td>—</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>India Gate Basmati Rice 5kg</td>
+                    <td>Rice &amp; Grains</td>
+                    <td>15 units</td>
+                    <td><span class="badge badge--in-stock">In Stock</span></td>
+                    <td>20 Mar 2027</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>Fortune Sunflower Oil 1L</td>
+                    <td>Oils</td>
+                    <td>6 units</td>
+                    <td><span class="badge badge--low-stock">Low Stock</span></td>
+                    <td>14 Jan 2027</td>
+                   
+                  </tr>
+                  <tr>
+                    <td>Maggi 2-Minute Noodles</td>
+                    <td>Packaged Foods</td>
+                    <td>12 units</td>
+                    <td><span class="badge badge--expiring-soon">Expiring Soon</span></td>
+                    <td>02 Sep 2026</td>
+                    
+                  </tr>
+                  <tr>
+                    <td>Tata Tea Gold 250g</td>
+                    <td>Tea &amp; Coffee</td>
+                    <td>4 units</td>
+                    <td><span class="badge badge--expired">Expired</span></td>
+                    <td>10 Jul 2026</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="stock-modal" class="stock-modal" style="display: none;">
+  <div class="stock-modal-content">
+
+    <button type="button" id="close-stock-modal" class="stock-modal-close">
+      ×
+    </button>
+
+    <h3 id="stock-modal-title">Product Stock</h3>
+
+    <div id="stock-batch-list"></div>
+
+  </div>
+</div>
+          </div>
+          <div id="sales-section" style="display: none; width: 100%;">
+  <header class="section-header">
+    <h2>Sales</h2>
+    <p>Record and manage your shop sales</p>
+  </header>
+
+  <div class="sales-form">
+   
+    <div class="form-group">
+  <label for="customer-name">Customer Name</label>
+  <input
+    type="text"
+    id="customer-name"
+    placeholder="Enter customer name"
+  />
+</div>
+
+<div class="form-group">
+  <label for="payment-method">Payment Method</label>
+  <select id="payment-method">
+    <option value="">Select payment method</option>
+    <option value="Cash">Cash</option>
+    <option value="UPI">UPI</option>
+    <option value="Card">Card</option>
+    <option value="Pending">Pending</option>
+  </select>
+</div>
+
+    <div class="form-group">
+      <label for="sale-product">Product</label>
+      <select id="sale-product">
+        <option value="">Select product</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="sale-stock">Available Stock</label>
+      <input
+        type="text"
+        id="sale-stock"
+        placeholder="Available stock"
+        readonly
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="sale-quantity">Quantity</label>
+      <input
+        type="number"
+        id="sale-quantity"
+        min="1"
+        placeholder="Enter quantity"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="sale-price">Unit Price</label>
+      <input
+        type="text"
+        id="sale-price"
+        placeholder="Unit price"
+        readonly
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="sale-total">Total Amount</label>
+      <input
+        type="text"
+        id="sale-total"
+        placeholder="Total amount"
+        readonly
+      />
+    </div>
+
+    <button type="button" class="btn btn--primary" id="save-sale-btn">
+      Complete Sale
+    </button>
+
+  </div>
+</div>
+
+<div id="sales-report-section" style="display: none; width: 100%;">
+  <header class="section-header">
+    <h2>Sales Report</h2>
+    <p>manage your completed sales</p>
+  </header>
+
+  <div class="table-wrap section-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Invoice ID</th>
+          <th>Date</th>
+          <th>Customer Name</th>
+          <th>Items</th>
+          <th>Total Amount</th>
+          <th>Payment</th>
+          
+        </tr>
+      </thead>
+
+      <tbody id="sales-report-table-body">
+        <!-- Sales records will be added here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="stock-report-section" style="display: none; width: 100%;">
+  <header class="section-header">
+    <h2>Stock Report</h2>
+    <p>View current stock levels and expiry information</p>
+  </header>
+
+  <div class="table-wrap section-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Current Stock</th>
+          <th>Stock Status</th>
+          <th>Nearest Expiry</th>
+        </tr>
+      </thead>
+
+      <tbody id="stock-report-table-body">
+        <!-- Stock report will be added here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+        </main> <!-- Line 480-il kidanna Main Content Tag-inte Avasanippu -->
+        
+      </div>
+    </div>
+    <script>
+      (function () {
+        var dateEl = document.querySelector(".date-chip");
+        if (!dateEl) return;
+
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = String(now.getMonth() + 1).padStart(2, "0");
+        var day = String(now.getDate()).padStart(2, "0");
+
+        dateEl.textContent = now.toLocaleDateString("en-GB", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+        dateEl.setAttribute("datetime", year + "-" + month + "-" + day);
+      })();
+    </script>
+    <script src="script.js"></script>
+    </body>
+</html>
