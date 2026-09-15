@@ -152,7 +152,9 @@ if (productSearch && productSuggestions) {
       productSuggestions.appendChild(noResult);
     }
   });
+  
 }
+
 
 const addProductBtn = document.getElementById("add-product-btn");
 const addProductForm = document.getElementById("add-product-form");
@@ -509,6 +511,7 @@ function getTotalStock(product) {
     0
   );
 }
+updateProductTable();
 
 const lowStockItems=inventory.filter(product => getTotalStock(product) <= 5);
 document.getElementById("low-stock-count").textContent=lowStockItems.length;
@@ -856,7 +859,7 @@ localStorage.setItem("sales", JSON.stringify(sales));
 document.getElementById("total-sales").textContent=sales.length;
   document.getElementById("total-revenue").textContent=sales.reduce( (totalRevenue,sale) => totalRevenue + sale.totalAmount,0);
 
-
+  updateSalesReport();
 
   alert(`${selectedProduct} sale completed successfully!`);
 });
@@ -892,7 +895,9 @@ function updateSalesReport() {
   });
   
 }
+
 updateSalesReport();
+
 
 
 function updateStockReport() {
