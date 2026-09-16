@@ -277,7 +277,7 @@ if (saveProductBtn && addProductForm && productCategory && newProductName && new
 
 
 function updateProductTable() { 
-  console.log("Products table is updating");
+  
    const tableBody = document.getElementById("products-table-body");
 
   if(!tableBody) return;
@@ -722,8 +722,7 @@ function loadSaleProducts() {
     <option value="">Select product</option>
   `;
 
-  console.log("Inventory for Sales :",inventory);
-  console.log("Sale Product Element :",saleProduct)
+
 
   inventory.forEach(product => {
     const option = document.createElement("option");
