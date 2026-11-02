@@ -495,11 +495,6 @@ svg {
   margin-bottom: 0.5rem;
 }
 
-.stat-card__hint {
-  font-size: 0.76rem;
-  font-weight: 600;
-  margin-top: auto;
-}
 
 .stat-card__hint--up {
   color: var(--hint-color, var(--emerald-700));

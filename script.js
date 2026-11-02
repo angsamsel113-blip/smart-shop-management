@@ -35,7 +35,7 @@ function initSidebarNavigation() {
 
   if (productsLink && productsView && dashboardView) {
     productsLink.addEventListener('click', (e) => {
-      e.preventDefault();
+     
       showView(productsView, productsLink);
       updateProductTable();
     });
@@ -493,15 +493,7 @@ if (savedInventory) {
   inventory.length = 0;
   inventory.push(...JSON.parse(savedInventory));
 }
-//Add prices to product
-inventory.forEach(product=> {
-  if(product.name==="Pepsi") {
-    product.price=40;
-  }
-  if(product.name==="Coca Cola") {
-    product.price=40;
-  }
-});
+
 localStorage.setItem("inventory",JSON.stringify(inventory));
 loadStockProducts();
 
@@ -721,10 +713,7 @@ function loadSaleProducts() {
   saleProduct.innerHTML = `
     <option value="">Select product</option>
   `;
-
-
-
-  inventory.forEach(product => {
+   inventory.forEach(product => {
     const option = document.createElement("option");
 
     option.value = product.name;
@@ -852,8 +841,6 @@ const sale = {
 };
 
 sales.push(sale);
-
-
 localStorage.setItem("sales", JSON.stringify(sales));
 document.getElementById("total-sales").textContent=sales.length;
   document.getElementById("total-revenue").textContent=sales.reduce( (totalRevenue,sale) => totalRevenue + sale.totalAmount,0);
